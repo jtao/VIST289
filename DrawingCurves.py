@@ -5,7 +5,7 @@ import coordsys as cs
 def setup():
     global t, ptlist
     # Initialize canvas size to 800x600 pixels
-    size(800, 600)
+    size(600, 600)
     
     # Set color mode to RGB with values ranging from 0.0 to 1.0
     # e.g., TAMU Maroon (80, 0 ,0) will be (0.3137254901960784, 0, 0)
@@ -23,7 +23,7 @@ def setup():
     t = 0.0
     # Initialize ptlist (a list to store points) as an empty list
     ptlist = []
-    frameRate(1)
+    frameRate(30)
     
 # draw() function runs repeatedly to update the canvas
 def draw():
@@ -34,7 +34,7 @@ def draw():
     # bottom, and ymax on the top. It also redefines the stroke weight to be one pixel, 
     # otherwise it would scale up or down due to the scale operation. The global view 
     # plane width is used to communicate the width, in drawing coordinates, of the window.    
-    cs.coordinateFrame(0.0, 0.0, 8.0, 6.0)
+    cs.coordinateFrame(-16, -16, 16, 16)
     
     # Set the border weight for shapes
     cs.borderWeight(3)
@@ -43,7 +43,7 @@ def draw():
     background(0.25, 0.0, 0.1)
     
     # Add a new point to ptlist with x-coordinate t and y-coordinate 3.0
-    ptlist.append((t, 3.0))
+    ptlist.append((16*(sin(t)**3), 13*cos(t) - 5*cos(2*t)- 2*cos(3*t) - cos(4*t)))
     
     # Initialize lastpt with the first point in ptlist
     lastpt = ptlist[0]
