@@ -53,4 +53,4 @@ def draw():
     fill(80, 0, 0, 100) 
 
     # Drawing the second rectangle after transformations
-    rect(-2,-1
+    rect(-2,-1, 4,2)
