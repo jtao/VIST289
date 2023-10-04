@@ -1,21 +1,38 @@
-# Import the processing library for graphics and image manipulation
+# Import the required library
 from processing import *
 
-# Initialize the sketch with settings and assets
+# Setup function to define canvas and load image
 def setup():
-    # Declare 'img' as a global variable to access it outside this function
     global img
-    
-    # Set the canvas dimensions to 800 pixels in width and 600 pixels in height
     size(800, 600)
-    
-    # Load an image named "post_oak.jpg" into the 'img' variable
-    img = loadImage("post_oak.jpg")
-    
-    # Display the loaded image starting from the top-left corner of the canvas
+    img = loadImage("post_oak.jpg")  # Replace with your image path
     image(img, 0, 0)
+    
+# Draw function to apply filters
+# You can uncomment each line below to try things out.
 
-# Continuously execute the code inside to animate or apply real-time effects
 def draw():
-    # Convert the entire canvas content to grayscale
-    filter(GRAY)
+
+        # Grayscale Conversion
+#    filter(GRAY)
+#    filter(INVERT)
+
+# The range for the levels parameter is typically between 2 and 255:
+#    filter(POSTERIZE, 2)
+
+# Commonly used values might range from 0 to 67.
+#    filter(BLUR, 67)
+    
+# Sets the alpha channel to entirely opaque.
+#    filter(OPAQUE)
+
+# Reduces the light areas.
+#    filter(ERODE)
+    
+# Increases the light areas
+#    filter(DILATE)
+
+# The threshold level parameter ranges from 0.0 to 1.0.
+    filter(THRESHOLD, 0.3)
+
+    noLoop()
